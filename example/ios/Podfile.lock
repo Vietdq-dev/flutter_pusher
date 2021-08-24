@@ -1,5 +1,5 @@
 PODS:
-  - Flutter (2.0.2)
+  - Flutter (1.0.0)
   - flutter_pusher (2.0.0):
     - Flutter
     - PusherSwift (= 8.0.0)
@@ -10,26 +10,28 @@ PODS:
   - Starscream (3.1.1)
 
 DEPENDENCIES:
+  - Flutter (from `Flutter`)
   - flutter_pusher (from `.symlinks/plugins/flutter_pusher/ios`)
 
 SPEC REPOS:
   trunk:
-    - Flutter
     - PusherSwift
     - ReachabilitySwift
     - Starscream
 
 EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
   flutter_pusher:
     :path: ".symlinks/plugins/flutter_pusher/ios"
 
 SPEC CHECKSUMS:
-  Flutter: c48dd2c06f81cd2d28c2d5e68a129c76508452c2
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_pusher: 0bbb4ba53b4a16fc8d2c1afe53c3edc3c2732d80
   PusherSwift: 8f18b7beaf383e0475607ab6a3f89f477637fb21
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: d231b65d6bea6d24555f84ca7901720538b5791f
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
 COCOAPODS: 1.10.0
