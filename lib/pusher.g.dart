@@ -9,9 +9,7 @@ part of 'pusher.dart';
 InitArgs _$InitArgsFromJson(Map<String, dynamic> json) {
   return InitArgs(
     json['appKey'] as String,
-    json['options'] == null
-        ? null
-        : PusherOptions.fromJson(json['options'] as Map<String, dynamic>),
+    PusherOptions.fromJson(json['options'] as Map<String, dynamic>),
     isLoggingEnabled: json['isLoggingEnabled'] as bool,
   );
 }
@@ -38,9 +36,7 @@ Map<String, dynamic> _$BindArgsToJson(BindArgs instance) => <String, dynamic>{
 
 PusherOptions _$PusherOptionsFromJson(Map<String, dynamic> json) {
   return PusherOptions(
-    auth: json['auth'] == null
-        ? null
-        : PusherAuth.fromJson(json['auth'] as Map<String, dynamic>),
+    auth: json['auth'] == null ? null : PusherAuth.fromJson(json['auth'] as Map<String, dynamic>),
     cluster: json['cluster'] as String,
     host: json['host'] as String,
     port: json['port'] as int,
@@ -70,29 +66,25 @@ Map<String, dynamic> _$PusherOptionsToJson(PusherOptions instance) {
 PusherAuth _$PusherAuthFromJson(Map<String, dynamic> json) {
   return PusherAuth(
     json['endpoint'] as String,
-    headers: (json['headers'] as Map<String, dynamic>)?.map(
+    headers: (json['headers'] as Map<String, dynamic>).map(
       (k, e) => MapEntry(k, e as String),
     ),
   );
 }
 
-Map<String, dynamic> _$PusherAuthToJson(PusherAuth instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PusherAuthToJson(PusherAuth instance) => <String, dynamic>{
       'endpoint': instance.endpoint,
       'headers': instance.headers,
     };
 
-ConnectionStateChange _$ConnectionStateChangeFromJson(
-    Map<String, dynamic> json) {
+ConnectionStateChange _$ConnectionStateChangeFromJson(Map<String, dynamic> json) {
   return ConnectionStateChange(
     currentState: json['currentState'] as String,
     previousState: json['previousState'] as String,
   );
 }
 
-Map<String, dynamic> _$ConnectionStateChangeToJson(
-        ConnectionStateChange instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ConnectionStateChangeToJson(ConnectionStateChange instance) => <String, dynamic>{
       'currentState': instance.currentState,
       'previousState': instance.previousState,
     };
@@ -105,8 +97,7 @@ ConnectionError _$ConnectionErrorFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$ConnectionErrorToJson(ConnectionError instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ConnectionErrorToJson(ConnectionError instance) => <String, dynamic>{
       'message': instance.message,
       'code': instance.code,
       'exception': instance.exception,
@@ -126,26 +117,19 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'data': instance.data,
     };
 
-PusherEventStreamMessage _$PusherEventStreamMessageFromJson(
-    Map<String, dynamic> json) {
+PusherEventStreamMessage _$PusherEventStreamMessageFromJson(Map<String, dynamic> json) {
   return PusherEventStreamMessage(
-    event: json['event'] == null
-        ? null
-        : Event.fromJson(json['event'] as Map<String, dynamic>),
+    event: json['event'] == null ? null : Event.fromJson(json['event'] as Map<String, dynamic>),
     connectionStateChange: json['connectionStateChange'] == null
         ? null
-        : ConnectionStateChange.fromJson(
-            json['connectionStateChange'] as Map<String, dynamic>),
+        : ConnectionStateChange.fromJson(json['connectionStateChange'] as Map<String, dynamic>),
     connectionError: json['connectionError'] == null
         ? null
-        : ConnectionError.fromJson(
-            json['connectionError'] as Map<String, dynamic>),
+        : ConnectionError.fromJson(json['connectionError'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$PusherEventStreamMessageToJson(
-        PusherEventStreamMessage instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PusherEventStreamMessageToJson(PusherEventStreamMessage instance) => <String, dynamic>{
       'event': instance.event,
       'connectionStateChange': instance.connectionStateChange,
       'connectionError': instance.connectionError,
