@@ -14,8 +14,8 @@ class _MyAppState extends State<MyApp> {
   String? lastConnectionState;
   Channel? channel;
 
-  var channelController = TextEditingController(text: "my-channel");
-  var eventController = TextEditingController(text: "my-event");
+  var channelController = TextEditingController(text: "trading");
+  var eventController = TextEditingController(text: "updateTrading");
   var triggerController = TextEditingController(text: "client-trigger");
 
   @override
@@ -27,9 +27,9 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPusher() async {
     try {
       await Pusher.init(
-          "APP_KEY",
+          "7d3fa09b08153e940b6d",
           PusherOptions(
-            cluster: "eu",
+            cluster: "ap1",
           ),
           enableLogging: true);
     } on PlatformException catch (e) {
